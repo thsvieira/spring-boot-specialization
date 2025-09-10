@@ -58,4 +58,8 @@ public class ProdutoController {
         return produtoRepository.save(produtoN);
     }
 
+    @GetMapping("/busca-por-nome")
+    public List<Produto> obterProdutosPorNome(@RequestParam("nome") String nome){
+        return produtoRepository.findByNome(nome);
+    }
 }
